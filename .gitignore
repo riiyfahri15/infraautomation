@@ -1,0 +1,82 @@
+# ── Terraform ────────────────────────────────────────────
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+*.tfplan
+terraform.tfvars
+*.auto.tfvars
+# Keep the example file
+!terraform.tfvars.example
+
+# ── Terraform — only Section 3.2-3.6 modules are pushed ──
+# Exclude all terraform first, then include what's needed
+!terraform/
+!terraform/*.tf
+!terraform/*.tfvars.example
+!terraform/TROUBLESHOOTING.md
+!terraform/modules/
+!terraform/modules/vpc/
+!terraform/modules/vpc/**
+!terraform/modules/security/
+!terraform/modules/security/**
+!terraform/modules/alb/
+!terraform/modules/alb/**
+!terraform/modules/database/
+!terraform/modules/database/**
+!terraform/modules/s3/
+!terraform/modules/s3/**
+
+# Answer key — jury only, do not push to student repo
+terraform/answer-key/
+
+testing/
+generate-lockfiles.sh
+infralks26.zip
+push-to-github.sh
+token
+session-manager-plugin.deb
+api/node_modules/
+api/routes/__init__.py
+api/app.py.bak
+
+# ── Node.js ──────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ── Python ───────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# ── Environment files ────────────────────────────────────
+.env
+.env.local
+.env.*.local
+# Keep examples
+!.env.example
+!**/.env.example
+
+# ── Docker ───────────────────────────────────────────────
+*.log
+
+# ── macOS / IDE ──────────────────────────────────────────
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# ── Build outputs ────────────────────────────────────────
+frontend/dist/
+Modul Infrastructure Automation.pdf
+
