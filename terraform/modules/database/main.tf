@@ -11,6 +11,17 @@ resource "aws_db_subnet_group" "main" {
   }
 }
 
+resource "aws_db_parameter_group" "main" {
+  name   = "lks-rds-pg"
+  family = "postgres15"
+
+  parameter {
+    name  = "rds.force_ssl"
+    value = "0"
+  }
+}
+
+
 resource "aws_db_instance" "main" {
   identifier           = "lks-rds-postgres"
   allocated_storage    = 20
@@ -21,6 +32,7 @@ resource "aws_db_instance" "main" {
   username             = var.db_username
   password             = var.db_password
   publicly_accessible  = false
+  parameter_group_name = aws_db_parameter_group.main.id
   skip_final_snapshot  = true
   backup_retention_period = 7
   vpc_security_group_ids = [var.security_group_id]
