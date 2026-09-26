@@ -178,6 +178,7 @@ def delete_user(user_id):
         if not deleted:
             conn.rollback()
             return jsonify({"error": "User not found"}), 404
+        conn.commit()
         publish_event("user.deleted", {"userId": user_id})
         return "", 204
     except Exception:

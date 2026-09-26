@@ -77,7 +77,7 @@ def server_error(e):
     return jsonify({"error": "Internal Server Error", "message": str(e)}), 500
 
 def run_metrics():
-    metrics_port = int(os.getenv("METRIC_PORT", 9100))
+    metrics_port = int(os.getenv("METRICS_PORT", 9100))
     log.info(f"Metrics server on :{metrics_port}")
     metrics_app.run(host="0.0.0.0", port=metrics_port, use_reloader=False)
 

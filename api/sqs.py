@@ -7,7 +7,7 @@ from botocore.exceptions import ClientError
 
 log = logging.getLogger(__name__)
 _client = None
-QUEUE_URL = os.getenv("SQS_URL", "")
+QUEUE_URL = os.getenv("SQS_QUEUE_URL", "")
 
 
 def _get_client():

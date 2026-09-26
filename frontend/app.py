@@ -6,7 +6,7 @@ load_dotenv()
 
 app = Flask(__name__)
 
-API_URL        = os.getenv("BACKEND_URL", "")
+API_URL        = os.getenv("API_URL", "")
 GRAFANA_URL    = os.getenv("GRAFANA_URL", "")
 PROMETHEUS_URL = os.getenv("PROMETHEUS_URL", "")
 
